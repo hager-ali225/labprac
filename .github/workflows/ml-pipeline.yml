@@ -8,6 +8,8 @@ jobs:
   validate-and-test:
     runs-on: ubuntu-latest
     steps:
+      - name: checkcodey
+        uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -20,9 +22,9 @@ jobs:
         run: flake8 .
       - name: Model Dry Test
         run: python -c "import torch; print('Model environment ready!')"
-      - name: uploads_error
+      - name: uploads_artfact
         uses: actions/upload-artifact@v4
         with:
-          name: progect1
+          name: progject
           path: README.md
       
