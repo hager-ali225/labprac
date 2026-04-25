@@ -15,7 +15,7 @@ def main():
     model = SimpleModel()
 
     # dummy input
-    x = torch.randn(1, 9)
+    x = torch.randn(1, 10)
 
     # forward pass
     output = model(x)
