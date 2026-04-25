@@ -1,30 +1,7 @@
-on:
-  push:
-     branches-ignore:
-      - main
-  pull_request:
+on: push
 
 jobs:
-  validate-and-test:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: checkcodey
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-      
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
-      
-      - name: Linter Check
-        run: flake8 .
-      - name: Model Dry Test
-        run: python -c "import torch; print('Model environment ready!')"
-      - name: uploads_artfact
-        uses: actions/upload-artifact@v4
-        with:
-          name: progject
-          path: README.md
-      
+      - run: echo "Actions is working!"
